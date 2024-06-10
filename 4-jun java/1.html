@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      .yellow-box {
+          width: 400px;
+          height: 100px;
+          background-color: yellow;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+          border: 2px solid black;
+      }
+
+
+      .text-style{ 
+    height: 100px;
+    width: 500px;
+    border: solid 2px black ;
+}
+
+#p-2 { 
+    text-align: center;
+    font-size: 20px;
+}
+  </style>
+</head>
+<body>
+  
+    <!-- task1 -->
+   <!-- <div class="yellow-box" id="box">Hello World</div>
+   <script>
+   const box = document.getElementById('box')
+   box.addEventListener('mouseover',function()
+      {box.textContent='can i help you?'})
+
+      box.addEventListener('mouseout',function() {box.textContent='Hello world'
+         
+      })
+
+   </script> --> 
+
+
+<!-- task2 -->
+
+
+<!-- <select id="imageSelector">
+        
+        
+        <option value="jordan.jpg">jordan</option>
+        <option value="palestine.jpg">palestine</option>
+    </select>
+    <br><br>
+    <img id="displayImage" src="jordan.jpg" alt="No image" width="300">
+    
+    <script>
+      const imageSelector = document.getElementById('imageSelector');
+      const displayImage = document.getElementById('displayImage');
+
+      // Function to change the image based on the selected option
+      function updateImage() {
+          const selectedOption = imageSelector.options[imageSelector.selectedIndex];
+          displayImage.src = selectedOption.value;
+          displayImage.alt = selectedOption.text;
+      }
+
+      // Function to toggle the image on hover
+      function toggleImage() {
+          if (displayImage.src.includes('jordan.jpg')) {
+              displayImage.src = 'palestine.jpg';
+              displayImage.alt = 'palestine';
+              imageSelector.value = 'palestine.jpg';
+          } else {
+              displayImage.src = 'jordan.jpg';
+              displayImage.alt = 'jordan';
+              imageSelector.value = 'jordan.jpg';
+          }
+      }
+
+      // Event listener for changing the image based on the select option
+      imageSelector.addEventListener('change', updateImage);
+
+      // Event listeners for hovering over the image
+      displayImage.addEventListener('mouseover', toggleImage);
+      displayImage.addEventListener('mouseout', toggleImage);
+  </script> -->
+
+
+  <!-- task3 -->
+  <!-- <div class="selectors"> 
+
+   <select name="font-family" id="font-family"  onchange="change_family(this.value)"> 
+     <option value="Arial, sans-serif">Arial</option>
+     <option value="Times New Roman">Times New Roman</option>
+     <option value="Verdana, Geneva, sans-serif">Verdana</option>
+      
+   </select>
+   <select name="font-size" id="font-size"  onchange="change_size(this.value)"> 
+      <option value="10px">10px</option>
+      <option value="20px">20px</option>
+      <option value="30px">30px</option>
+      <option value="40px">40px</option>
+       
+    </select>
+
+    <input type="checkbox" id="italic" onchange="change_style()">
+    <label for="italic">Italic</label>
+  
+    <input type="checkbox" id="bold" onchange="change_style()" >
+    <label for="bold">Bold</label>
+  
+    <input type="checkbox" id="underline" onchange="change_style()">
+    <label for="underline">Underline</label>
+
+</div>
+
+
+<br>
+
+<div class="text-style">
+  <p id="paragraph"> Hello , it's me rania</p>
+</div>
+<script>
+
+
+function change_size(value) {
+    document.getElementById("paragraph").style.fontSize = value;
+  }
+  function change_family(value) {
+    document.getElementById("paragraph").style.fontFamily = value;
+  }
+
+  function change_style() {
+    var paragraph = document.getElementById("paragraph");
+    var italic  = document.getElementById("italic");
+    var bold  = document.getElementById("bold");
+    var underline  = document.getElementById("underline");
+  
+    paragraph.style.fontStyle = italic.checked ? "italic" : "normal";
+    paragraph.style.fontWeight = bold.checked ? "bold" : "normal";
+    paragraph.style.textDecoration = underline.checked ? "underline" : "none";
+  }
+</script> -->
+
+
+
+</body>
+</html>
