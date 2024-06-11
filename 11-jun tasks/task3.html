@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .error {
+        color: red;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="fname">Enter a Fname:</label>
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        pattern="[A-Za-z]+"
+        title="Numbers are not allowed"
+      />
+      <span class="error" id="fnameError"></span>
+      <br /><br />
+
+      <label for="lname">Enter a Lname:</label>
+      <input
+        type="text"
+        id="lname"
+        name="lname"
+        pattern="[A-Za-z]+"
+        title="Numbers are not allowed"
+      />
+      <span class="error" id="lnameError"></span>
+      <br /><br />
+
+      <label for="bdate">Enter a Bdate:</label>
+      <input
+        type="text"
+        id="bdate"
+        name="bdate"
+        pattern="\d{2}/\d{2}/\d{4}"
+        title="The format should be dd/mm/yyyy"
+      />
+      <span class="error" id="bdateError"></span>
+      <br /><br />
+
+      <label for="email">Enter an email:</label>
+      <input type="email" id="email" name="email" />
+      <span class="error" id="emailError"></span>
+      <br /><br />
+
+      <label for="confirmEmail">Confirm Email:</label>
+      <input type="email" id="confirmEmail" name="confirmEmail" />
+      <span class="error" id="confirmEmailError"></span>
+      <br /><br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" />
+      <span class="error" id="passwordError"></span>
+      <br /><br />
+
+      <label for="confirmPassword">Confirm password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" />
+      <span class="error" id="confirmPasswordError"></span>
+      <br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let isValid = true;
+
+          document.querySelectorAll(".error").forEach(function (el) {
+            el.textContent = "";
+          });
+
+          const fname = document.getElementById("fname");
+          if (!fname.checkValidity()) {
+            document.getElementById("fnameError").textContent = fname.title;
+            isValid = false;
+          }
+
+         
+          const lname = document.getElementById("lname");
+          if (!lname.checkValidity()) {
+            document.getElementById("lnameError").textContent = lname.title;
+            isValid = false;
+          }
+
+         
+          const bdate = document.getElementById("bdate");
+          if (!bdate.checkValidity()) {
+            document.getElementById("bdateError").textContent = bdate.title;
+            isValid = false;
+          }
+
+          const email = document.getElementById("email");
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email.value)) {
+            document.getElementById("emailError").textContent =
+              "The e-mail is not valid";
+            isValid = false;
+          }
+
+          
+          const confirmEmail = document.getElementById("confirmEmail");
+          if (email.value !== confirmEmail.value) {
+            document.getElementById("confirmEmailError").textContent =
+              "Emails do not match";
+            isValid = false;
+          }
+
+     
+          const password = document.getElementById("password");
+          const confirmPassword = document.getElementById("confirmPassword");
+          if (password.value !== confirmPassword.value) {
+            document.getElementById("confirmPasswordError").textContent =
+              "Passwords do not match";
+            isValid = false;
+          }
+
+          if (isValid) {
+            alert("Form submitted successfully!");
+            
+          }
+        });
+    </script>
+  </body>
+</html>
